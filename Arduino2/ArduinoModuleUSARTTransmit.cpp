@@ -5,6 +5,11 @@
 #include <avr/interrupt.h>
 #include <avr/io.h>
 
+/*static*/ void ArduinoModuleUSARTTransmit::USARTCallback(ArduinoModuleUSARTTransmit* pThis)
+{
+	pThis->OnMessageSent();
+}
+
 void ArduinoModuleUSARTTransmit::Setup()
 {
 	const unsigned int finalRate = (int)((MAIN_CLOCK_RATE / ((unsigned long long)baud * 16ull))) - 1;
@@ -21,7 +26,7 @@ void ArduinoModuleUSARTTransmit::Setup()
 
 	UCSR0B |= (1 << 6); // Turn on USART transmit complete interrupt
 
-	///RegisterCallback(USART_TX_vect_num, (void*)&ArduinoModuleUSARTTransmit::OnMessageSent);
+	RegisterCallback(USART_TX_vect_num, &ArduinoModuleUSARTTransmit::USARTCallback);
 }
 
 void ArduinoModuleUSARTTransmit::Loop()

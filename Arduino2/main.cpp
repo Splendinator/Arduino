@@ -15,16 +15,18 @@
 
 #include "ArduinoModuleBase.h"
 #include "ArduinoModuleUSARTTransmit.h"
+#include "ArduionoModuleTemp.h"
 
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
 // Arduino Modules
 ArduinoModuleUSARTTransmit moduleUSARTTransmit(/*baudRate =*/9600);
-ArduinoModuleBase* pArduinoModules[] { &moduleUSARTTransmit };
+ArduionoModuleTemp moduleTemp(&moduleUSARTTransmit);
+ArduinoModuleBase* pArduinoModules[] { &moduleUSARTTransmit, &moduleTemp };
 
 // Vector table events (26 vectors)
-const int MAX_EVENT_LISTENERS = 10; // Max number of event listeners listening to the same vector
+const int MAX_EVENT_LISTENERS = 3; // Max number of event listeners listening to the same vector
 struct ListenerEntry
 {
 	void(*pCallback)(void*);
@@ -65,7 +67,7 @@ RegisterNewVector(16);
 RegisterNewVector(17);
 RegisterNewVector(18);
 RegisterNewVector(19);
-///RegisterNewVector(20);
+RegisterNewVector(20);
 RegisterNewVector(21);
 RegisterNewVector(22);
 RegisterNewVector(23);
@@ -73,19 +75,15 @@ RegisterNewVector(24);
 RegisterNewVector(25);
 RegisterNewVector(26);
 
-ISR(USART_TX_vect)
-{
-	moduleUSARTTransmit.OnMessageSent();
-}
-
 void DomMain::RegisterCallback(int vecNum, void* pCaller, void (*callback)(void*))
 {
 	for (int i = 0; i < MAX_EVENT_LISTENERS; ++i)
 	{
-		if (eventListeners[vecNum][i].pCallback == nullptr)
+		ListenerEntry& entry = eventListeners[vecNum][i - 1];
+		if (entry.pCallback == nullptr)
 		{
-			eventListeners[vecNum][i].pCallback = callback;
-			eventListeners[vecNum][i].pCaller = pCaller;
+			entry.pCallback = callback;
+			entry.pCaller = pCaller;
 			return;
 		}
 	}
@@ -124,8 +122,8 @@ void TestSetup()
 {
 	
 }
+
 void TestLoop()
 {
-	PrintMessage("Cuntflaps");
-	_delay_ms(1000);
+
 }

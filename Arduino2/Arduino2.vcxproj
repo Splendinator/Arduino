@@ -91,12 +91,14 @@ make upload</NMakeBuildCommandLine>
   <ItemGroup>
     <ClCompile Include="ArduinoModuleBase.cpp" />
     <ClCompile Include="ArduinoModuleUSARTTransmit.cpp" />
+    <ClCompile Include="ArduionoModuleTemp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArduinoModuleBase.h" />
     <ClInclude Include="ArduinoModuleUSARTTransmit.h" />
+    <ClInclude Include="ArduionoModuleTemp.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

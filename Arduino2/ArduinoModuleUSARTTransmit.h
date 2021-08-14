@@ -30,6 +30,8 @@ protected:
 
 private:
 
+	static void USARTCallback(ArduinoModuleUSARTTransmit* pThis);
+
 	// Baud rate, set during construction
 	int baud;
 
