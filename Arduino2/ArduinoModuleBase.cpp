@@ -1,8 +1,8 @@
 #include "ArduinoModuleBase.h"
 
-#include "main.h"
+#include "VectorUtils.h"
 
 void ArduinoModuleBase::RegisterCallback(int vecNum, void* pCallback)
 {
-	DomMain::RegisterCallback(vecNum, this, (void(*)(void*))(pCallback));
+	DomVectorUtils::RegisterCallback(vecNum, this, (void(*)(void*))(pCallback));
 }

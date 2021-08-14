@@ -7,12 +7,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arduino2", "Arduino2\Arduin
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CompileNoUpload|x64 = CompileNoUpload|x64
+		CompileNoUpload|x86 = CompileNoUpload|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{549C06C1-AEA6-4A1C-B8C6-F6F49C4B36D8}.CompileNoUpload|x64.ActiveCfg = CompileNoUpload|x64
+		{549C06C1-AEA6-4A1C-B8C6-F6F49C4B36D8}.CompileNoUpload|x64.Build.0 = CompileNoUpload|x64
+		{549C06C1-AEA6-4A1C-B8C6-F6F49C4B36D8}.CompileNoUpload|x86.ActiveCfg = CompileNoUpload|Win32
+		{549C06C1-AEA6-4A1C-B8C6-F6F49C4B36D8}.CompileNoUpload|x86.Build.0 = CompileNoUpload|Win32
 		{549C06C1-AEA6-4A1C-B8C6-F6F49C4B36D8}.Debug|x64.ActiveCfg = Debug|x64
 		{549C06C1-AEA6-4A1C-B8C6-F6F49C4B36D8}.Debug|x64.Build.0 = Debug|x64
 		{549C06C1-AEA6-4A1C-B8C6-F6F49C4B36D8}.Debug|x86.ActiveCfg = Debug|Win32

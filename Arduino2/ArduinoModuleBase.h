@@ -17,6 +17,7 @@ public:
 
 protected:
 
+	// Registers callback to interrupt. See (DomVectorUtils::RegisterCallback)
 	void RegisterCallback(int vecNum, void* pCallback);
 
 private:

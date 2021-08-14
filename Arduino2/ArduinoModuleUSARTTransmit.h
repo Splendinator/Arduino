@@ -36,7 +36,7 @@ private:
 	int baud;
 
 	// Circle buffer 
-	char dataBuffer[MESSAGE_BUFFER_SIZE];
+	char dataBuffer[MESSAGE_BUFFER_SIZE]; /// #TEMP: This isn't going into .bss
 	
 	// Our index in the circle buffer that we use to read data
 	int readIndex = 0;

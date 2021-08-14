@@ -1,6 +1,6 @@
 #include "ArduionoModuleTemp.h"
 
-#include "ArduinoModuleUSARTTransmit.h"
+#include "main.h"
 
 void ArduionoModuleTemp::Setup()
 {
