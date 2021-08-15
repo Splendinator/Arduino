@@ -15,7 +15,7 @@
 
 #include "ArduinoModuleBase.h"
 #include "ArduinoModuleUSARTTransmit.h"
-#include "ArduionoModuleTemp.h"
+#include "ArduionoModuleUSARTRecieve.h"
 
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -24,15 +24,15 @@
  * Arduino Modules
  */
 ArduinoModuleUSARTTransmit moduleUSARTTransmit(/*baudRate =*/9600);
-ArduionoModuleTemp moduleTemp;
-ArduinoModuleBase* pArduinoModules[] { &moduleUSARTTransmit, &moduleTemp };
+ArduionoModuleUSARTRecieve moduleUSARTRecieve(/*baudRate =*/9600);
+ArduinoModuleBase* arduinoModules[] { &moduleUSARTTransmit, &moduleUSARTRecieve };
 
 void TestSetup();
 void TestLoop();
 
 int main()
 {
-	for (ArduinoModuleBase* pArduinoModule : pArduinoModules)
+	for (ArduinoModuleBase* pArduinoModule : arduinoModules)
 	{
 		pArduinoModule->Setup();
 	}
@@ -43,7 +43,7 @@ int main()
 
 	for (;;)
 	{
-		for (ArduinoModuleBase* pArduinoModule : pArduinoModules)
+		for (ArduinoModuleBase* pArduinoModule : arduinoModules)
 		{
 			pArduinoModule->Loop();
 		}

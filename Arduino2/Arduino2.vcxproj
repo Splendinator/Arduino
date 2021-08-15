@@ -125,16 +125,18 @@ make</NMakeBuildCommandLine>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArduinoModuleBase.cpp" />
+    <ClCompile Include="ArduinoModuleUSARTBase.cpp" />
     <ClCompile Include="ArduinoModuleUSARTTransmit.cpp" />
-    <ClCompile Include="ArduionoModuleTemp.cpp" />
+    <ClCompile Include="ArduionoModuleUSARTRecieve.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SPI.h" />
     <ClCompile Include="VectorUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArduinoModuleBase.h" />
+    <ClInclude Include="ArduinoModuleUSARTBase.h" />
     <ClInclude Include="ArduinoModuleUSARTTransmit.h" />
-    <ClInclude Include="ArduionoModuleTemp.h" />
+    <ClInclude Include="ArduionoModuleUSARTRecieve.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="VectorUtils.h" />

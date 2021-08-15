@@ -23,10 +23,13 @@
     <ClCompile Include="ArduinoModuleBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ArduionoModuleTemp.cpp">
+    <ClCompile Include="VectorUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VectorUtils.cpp">
+    <ClCompile Include="ArduionoModuleUSARTRecieve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArduinoModuleUSARTBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -43,10 +46,13 @@
     <ClInclude Include="main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="ArduionoModuleTemp.h">
+    <ClInclude Include="VectorUtils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="VectorUtils.h">
+    <ClInclude Include="ArduionoModuleUSARTRecieve.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArduinoModuleUSARTBase.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
